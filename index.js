@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3003
+const PORT = process.env.PORT || 3010
 const { connectToDb, getDb } = require('./mongo')
 const { config } = require('dotenv')
 
@@ -38,4 +38,8 @@ app.get('/', (req, res) => {
       res.json({error: "Could not fetch the documents"})
     })
   // 
+})
+
+app.listen(PORT, () => {
+  console.log(`Example app listening at http://localhost:${PORT}`)
 })

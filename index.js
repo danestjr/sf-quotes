@@ -14,8 +14,8 @@ app.use(express.static('public'));
 let db
 connectToDb((err) => {
   if (!err) {
-    app.listen(port, () => {
-      console.log(`Example app listening on port ${port}`)
+    app.listen(PORT, () => {
+      console.log(`Example app listening on port ${PORT}`)
     })
     db = getDb()
     console.log('Connected to the database')
@@ -38,8 +38,4 @@ app.get('/', (req, res) => {
       res.json({error: "Could not fetch the documents"})
     })
   // 
-})
-
-app.listen(PORT, () => {
-  console.log(`Example app listening at http://localhost:${PORT}`)
 })

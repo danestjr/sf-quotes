@@ -15,7 +15,7 @@ let db
 connectToDb((err) => {
   if (!err) {
     app.listen(PORT, () => {
-      console.log(`Example app listening on port ${PORT}`)
+      console.log(`Express app is now listening on port ${PORT}`)
     })
     db = getDb()
     console.log('Connected to the database')

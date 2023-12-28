@@ -1,5 +1,7 @@
 FROM node:slim
-WORKDIR /sfquotes
-COPY . .
+
+COPY package*.json ./
+
 RUN npm install
-CMD [ "node", "index.js"]
+
+CMD [ "node", "index.js" ]
